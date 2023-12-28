@@ -1,8 +1,3 @@
-'''
-Iris Flower Classfier using simple machine learning
-@author: Suyash Shivaji Phatak
-Date:17/06/2020
-'''
 
 # Importing libraries
 import streamlit as st
@@ -12,8 +7,8 @@ from sklearn.ensemble import RandomForestClassifier
 
 # Creaing Heading and small description
 st.write("""
-# Simple Iris Flower Prediction App
-## *Created by* **Suyash Shivaji Phatak**
+# Iris Flower Prediction App
+## **6 anh em siêu nhân**
 
 This app predics the **iris** flower type:
 """)
@@ -56,7 +51,10 @@ prediction_proba = clf.predict_proba(df)
 
 # Creating tables and uploading the datasets to the tables
 st.subheader('Class labels and their corresponding index number')
-st.write(iris.target_names)
+df1 = pd.DataFrame(data=iris.target_names, columns=['Name'])
+# df1['Index'] = range(len(df1))
+st.write(df1)
+# st.write(iris.target_names)
 
 st.subheader('Prediction')
 st.write(iris.target_names[prediction])
