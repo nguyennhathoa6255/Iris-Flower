@@ -8,9 +8,8 @@ from sklearn.ensemble import RandomForestClassifier
 # Creaing Heading and small description
 st.write("""
 # Iris Flower Prediction App
-## **6 anh em siêu nhân**
 
-This app predics the **iris** flower type:
+This app predict the **iris** flower type:
 """)
 
 # Creating a sidebar for getting input parameters
@@ -52,13 +51,14 @@ prediction_proba = clf.predict_proba(df)
 # Creating tables and uploading the datasets to the tables
 st.subheader('Class labels and their corresponding index number')
 df1 = pd.DataFrame(data=iris.target_names, columns=['Name'])
-# df1['Index'] = range(len(df1))
 st.write(df1)
 # st.write(iris.target_names)
 
 st.subheader('Prediction')
-st.write(iris.target_names[prediction])
-#st.write(prediction)
+# st.write(iris.target_names[prediction])
+df2 = pd.DataFrame(data=iris.target_names[prediction], columns =['Name'], index = prediction)
+st.write(df2)
+
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
